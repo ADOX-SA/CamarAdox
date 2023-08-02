@@ -1,0 +1,154 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+.background {
+  display: flex;
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  /* height: 94.5vh; */
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  align-items: center;
+  justify-content: center;
+}
+
+.bodycontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 94.5vh;
+  width: 100%;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  padding-top: 50px;
+  z-index: 1;
+}
+.selector-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.selector-container-disable {
+  display: none;
+}
+.dropdown {
+  display: flex;
+  width: 30%;
+  height: 40%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+  border-radius: 20px;
+  /* border-style: solid; */
+  border-width: 1px;
+  max-width: fit-content;
+  min-width: 50%;
+  max-height: 80%;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+.navbar {
+  height: 50px;
+  background-color: grey;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.navbarRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+.logo {
+  display: flex;
+  height: 100%;
+}
+.title {
+  display: flex;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  /* margin: 0px; */
+}
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  height: 100%;
+  width: 100%;
+}
+.buttons-container-disable {
+  display: none;
+}
+.camara {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+  border-radius: 20px;
+  max-height: 80%;
+  position: relative;
+  z-index: 1;
+}
+.camara-disable {
+  display: none;
+}
+
+.btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  margin: 10px;
+  width: 40%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.btn-disable {
+  display: none;
+}
+.btn-primary {
+  background-color: #4caf50;
+}
+
+.btn-secondary {
+  background-color: #e91e63;
+}
+.btn-tertiary {
+  background-color: #007bff;
+}
+.btn-primary:hover {
+  background-color: #45a049;
+}
+.btn-secondary:hover {
+  background-color: #c2185b;
+}
+.btn-tertiary:hover {
+  background-color: #0056b3;
+}

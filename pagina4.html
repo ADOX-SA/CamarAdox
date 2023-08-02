@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Visualizar cámara USB</title>
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbarRow">
+        <img
+          class="logo"
+          src="https://adox.com.ar/wp-content/uploads/2023/07/Mesa-de-trabajo-1-copia@300x.png"
+          alt="logo"
+        />
+      </div>
+    </nav>
+    <img
+      class="background"
+      src="https://adox.com.ar/wp-content/uploads/2018/08/DSC_1560.jpg"
+    />
+    <div class="bodycontainer">
+      <div class="container">
+        <h1 class="title">Camaradox</h1>
+        <button class="btn btn-secondary" id="requestPermissionButton">
+          Solicitar permisos de cámara
+        </button>
+        <div class="selector-container-disable" id="cameraSelectorContainer">
+          <select class="dropdown" id="cameraSelector"></select>
+          <button class="btn btn-primary" id="selectCameraButton">
+            Seleccionar cámara
+          </button>
+        </div>
+        <canvas id="canvas" style="display: none"></canvas>
+        <video class="camara-disable" id="camera-view" autoplay></video>
+        <div class="buttons-container-disable" id="buttonsContainer">
+          <button class="btn btn-primary" id="captureButton">
+            Capturar imagen
+          </button>
+          <button class="btn btn-tertiary" id="recordButton">
+            Grabar video
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
