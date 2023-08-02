@@ -30,11 +30,6 @@ async function requestCameraPermission() {
 async function populateCameraOptions() {
   const devices = await navigator.mediaDevices.enumerateDevices();
 
-  console.log("devices: " + devices);
-  for (const element of devices) {
-    console.log("element: " + element.kind + " " + element.deviceId);
-  }
-
   const videoInputDevices = devices.filter(
     (device) => device.kind === "videoinput"
   );
@@ -47,7 +42,7 @@ async function populateCameraOptions() {
   videoInputDevices.forEach((device, index) => {
     const option = document.createElement("option");
     option.value = device.deviceId;
-    option.text = `Cámara ${index + 1}`;
+    option.text = `${device.label}`;
     cameraSelector.appendChild(option);
   });
 }
@@ -62,13 +57,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const selectCameraButton = document.getElementById("selectCameraButton");
   selectCameraButton.addEventListener("click", async () => {
     const selectedCameraId = document.getElementById("cameraSelector").value;
-    console.log("id camara: " + selectedCameraId);
     if (selectedCameraId) {
       await initializeCamera(selectedCameraId);
-      const containerSelector = document.getElementById(
-        "cameraSelectorContainer"
-      );
-      containerSelector.className = "selector-container-disable";
+      // const containerSelector = document.getElementById(
+      //   "cameraSelectorContainer"
+      // );
+      // containerSelector.className = "selector-container-disable";
     }
   });
 
