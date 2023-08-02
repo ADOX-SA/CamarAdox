@@ -59,12 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectedCameraId = document.getElementById("cameraSelector").value;
     if (selectedCameraId) {
       await initializeCamera(selectedCameraId);
-      // const containerSelector = document.getElementById(
-      //   "cameraSelectorContainer"
-      // );
-      // containerSelector.className = "selector-container-disable";
     }
   });
+
+  const fullscreenButton = document.getElementById("fullscreen-button");
+  fullscreenButton.addEventListener("click", toggleFullScreen);
 
   // Agregar el evento click al botón "Capturar imagen"
   const captureButton = document.getElementById("captureButton");
@@ -91,9 +90,8 @@ async function initializeCamera(cameraId) {
     videoElement.className = "camara";
     mediaStream = stream;
 
-    // Habilitamos los botones para capturar imagen y grabar video
-    document.getElementById("captureButton").disabled = false;
-    document.getElementById("recordButton").disabled = false;
+    const fullscreenButton = document.getElementById("fullscreen-button");
+    fullscreenButton.className = "btn btn-secondary";
   } catch (error) {
     console.error("Error al conectar a la cámara:", error);
   }
@@ -194,4 +192,37 @@ function getCurrentDateTime() {
   const seconds = String(now.getSeconds()).padStart(2, "0");
   // return `${year}${month}${day}-${hours}${minutes}${seconds}`;
   return `${day}-${month}-${year}__${hours}-${minutes}-${seconds}hs`;
+}
+
+function toggleFullScreen() {
+  const video = document.getElementById("camera-view");
+  if (document.fullscreenElement) {
+    // Si el video ya está en pantalla completa, salimos del modo de pantalla completa.
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      /* Firefox */
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      /* Chrome, Safari and Opera */
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      /* IE/Edge */
+      document.msExitFullscreen();
+    }
+  } else {
+    // Si el video no está en pantalla completa, lo ponemos en pantalla completa.
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.mozRequestFullScreen) {
+      /* Firefox */
+      video.mozRequestFullScreen();
+    } else if (video.webkitRequestFullscreen) {
+      /* Chrome, Safari and Opera */
+      video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) {
+      /* IE/Edge */
+      video.msRequestFullscreen();
+    }
+  }
 }

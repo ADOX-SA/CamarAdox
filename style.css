@@ -1,7 +1,7 @@
 body {
   padding: 0px;
   margin: 0px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .background {
   display: flex;
@@ -56,7 +56,7 @@ body {
   border-width: 1px;
   max-width: fit-content;
   min-width: 50%;
-  /* max-height: 88%; */
+  max-height: 88%;
   margin-top: 10px;
   padding: 20px;
   position: relative;
@@ -94,7 +94,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 20px;
+  margin: 1%;
   height: 100%;
   width: 100%;
 }
@@ -120,9 +120,10 @@ body {
   background-color: #4caf50;
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 1% 2%;
   margin: 10px;
   width: 40%;
+  height: 60%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
